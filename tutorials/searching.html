@@ -100,7 +100,7 @@
             ['Volvo', 2020, 'yellow', 'gray']
           ],
           example = document.getElementById('example1'),
-          searchFiled = document.getElementById('search_field'),
+          searchField = document.getElementById('search_field'),
           hot;
 
         hot = new Handsontable(example, {
@@ -109,7 +109,7 @@
           search: true
         });
 
-        Handsontable.dom.addEvent(searchFiled, 'keyup', function (event) {
+        Handsontable.dom.addEvent(searchField, 'keyup', function (event) {
           var search = hot.getPlugin('search');
           var queryResult = search.query(this.value);
 
@@ -153,7 +153,7 @@
             ["Volvo", 2020, "white", "gray"]
           ],
           example2 = document.getElementById("example2"),
-          hot2, searchFiled2;
+          hot2, searchField2;
 
         hot2 = new Handsontable(example2,{
           data: data,
@@ -162,9 +162,9 @@
             searchResultClass: 'customClass'
           }
         });
-        searchFiled2 = document.getElementById('search_field2');
+        searchField2 = document.getElementById('search_field2');
 
-        Handsontable.dom.addEvent(searchFiled2, 'keyup', function (event) {
+        Handsontable.dom.addEvent(searchField2, 'keyup', function (event) {
           var search = hot2.getPlugin('search');
           var queryResult = search.query(this.value);
 
@@ -203,7 +203,7 @@
             ["Volvo", 2020, "white", "gray"]
           ],
           example3 = document.getElementById("example3"),
-          hot3, searchFiled3;
+          hot3, searchField3;
 
         function onlyExactMatch(queryStr, value) {
           return queryStr.toString() === value.toString();
@@ -216,9 +216,9 @@
             queryMethod: onlyExactMatch
           }
         });
-        searchFiled3 = document.getElementById('search_field3');
+        searchField3 = document.getElementById('search_field3');
 
-        Handsontable.dom.addEvent(searchFiled3, 'keyup', function(event) {
+        Handsontable.dom.addEvent(searchField3, 'keyup', function(event) {
           var search = hot3.getPlugin('search');
           var queryResult = search.query(this.value);
 
@@ -258,7 +258,7 @@
             ["Volvo", 2020, "white", "gray"]
           ],
           example4 = document.getElementById("example4"),
-          hot4, searchFiled4, resultCount,
+          hot4, searchField4, resultCount,
           searchResultCount = 0;
 
         function searchResultCounter(instance, row, col, value, result) {
@@ -280,10 +280,10 @@
             callback: searchResultCounter
           }
         });
-        searchFiled4 = document.getElementById('search_field4');
+        searchField4 = document.getElementById('search_field4');
         resultCount = document.getElementById('resultCount');
 
-        Handsontable.dom.addEvent(searchFiled4, 'keyup', function(event) {
+        Handsontable.dom.addEvent(searchField4, 'keyup', function(event) {
           searchResultCount = 0;
 
           var search = hot4.getPlugin('search');
